@@ -1,0 +1,29 @@
+{
+  "name": "zh-utils2",
+  "version": "1.0.1",
+  "description": "中文常用处理的方法",
+  "main": "./lib",
+  "scripts": {
+    "build": "rc-tools run build",
+    "compile": "rc-tools run comiple",
+    "start": "rc-tools run server",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "rc-tools": "^9.5.3"
+  },
+  "files": [
+    "lib",
+    "es"
+  ],
+  "keywords": [
+    "zh"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willian-feng/zh-utils2.git"
+  },
+  "author": "willian-feng",
+  "license": "ISC"
+}
