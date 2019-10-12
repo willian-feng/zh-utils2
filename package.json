@@ -1,17 +1,11 @@
 {
   "name": "zh-utils2",
   "version": "1.0.1",
-  "description": "中文常用处理的方法",
+  "description": "zh utils",
   "main": "./lib",
   "scripts": {
-    "build": "rc-tools run build",
-    "compile": "rc-tools run comiple",
-    "start": "rc-tools run server",
-    "test": "jest"
-  },
-  "devDependencies": {
-    "jest": "^24.9.0",
-    "rc-tools": "^9.5.3"
+    "build": "babel es -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
     "lib",
@@ -25,5 +19,9 @@
     "url": "git+https://github.com/willian-feng/zh-utils2.git"
   },
   "author": "willian-feng",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
 }
