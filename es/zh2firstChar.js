@@ -1,13 +1,13 @@
 import { initial } from './cfg/initial';
 import { polyphone } from './cfg/polyphone';
 
-function checkCh(s) {
+const checkCh = (s) => {
   const uni = s.charCodeAt(0);
   if (uni > 40869 || uni < 19968) return s; // 不在汉字编码范围
   return polyphone[uni] || initial.charAt(uni - 19968); // 多音字||非多音字
 }
 
-function mkRslt(arr) {
+const mkRslt = (arr) => {
   let arrRslt = [''];
   for (let l = 0, len = arr.length; l < len; l++) {
     const str = arr[l];
@@ -22,7 +22,7 @@ function mkRslt(arr) {
       for (let i = 0; i < strLen; i++) {
         const tmp = tmpArr.slice(0);
         for (let j = 0; j < tmp.length; j++) {
-          tmp[j] += str.charAt(i);
+          tmp[j] += str[i];
         }
         arrRslt = [...arrRslt, ...tmp];
       }
@@ -31,15 +31,17 @@ function mkRslt(arr) {
   return arrRslt;
 }
 
-function makePy(str) {
+const makePy = (str) => {
   const arrResult = [];
   for (let i = 0, len = str.length; i < len; i++) {
-    arrResult.push(checkCh(str.charAt(i)));
+    arrResult.push(checkCh(str[i]));
   }
   return mkRslt(arrResult);
 }
 
-export default function getFirstChar(str) {
+const getFirstChar = (str) => {
   const s = str.trim();
   return !s ? [] : makePy(String(s));
 }
+
+export default getFirstChar;

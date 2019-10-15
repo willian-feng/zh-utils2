@@ -5,6 +5,7 @@
   "main": "./lib",
   "scripts": {
     "build": "babel es -d lib",
+    "webpack": "npm run build && uglify.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
@@ -22,6 +23,8 @@
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "uglify-js": "^3.6.1",
+    "webpack-cli": "^3.3.9"
   }
 }
