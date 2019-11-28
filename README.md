@@ -30,7 +30,6 @@ import React from 'react';
 import { Select } from 'antd';
 import zh from 'zh-utils2';
 // ....
-return (
   <Select
     showSearch={true}
 	value={value}
@@ -39,11 +38,11 @@ return (
 	filterOption={(input, option) => {
 	  input = String(input);
 	  const zw = zh(option.props.children);
-	  const result = ze.some(s => s.indexOf(input.toUpperCase()) > -1);
+	  const result = zw.some(s => s.indexOf(input.toUpperCase()) > -1);
 	  return option.props.children.toUpperCase().indexOf(input.toUpperCase()) > -1 || result;
 	}}>
 	// ... <Select.Option> list
   </Select>
 );
-
+// ...
 ```
