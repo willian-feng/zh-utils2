@@ -32,17 +32,16 @@ import zh from 'zh-utils2';
 // ....
   <Select
     showSearch={true}
-	value={value}
-	onChange={this.handleChange}
-	style={{ width: '200px' }}
-	filterOption={(input, option) => {
-	  input = String(input);
-	  const zw = zh(option.props.children);
-	  const result = zw.some(s => s.indexOf(input.toUpperCase()) > -1);
-	  return option.props.children.toUpperCase().indexOf(input.toUpperCase()) > -1 || result;
-	}}>
-	// ... <Select.Option> list
+    value={value}
+    onChange={this.handleChange}
+    style={{ width: '200px' }}
+    filterOption={(input, option) => {
+      input = String(input);
+      const zw = zh(option.props.children);
+      const result = zw.some(s => s.indexOf(input.toUpperCase()) > -1);
+      return option.props.children.toUpperCase().indexOf(input.toUpperCase()) > -1 || result;
+    }}>
+    // ... <Select.Option> list
   </Select>
-);
 // ...
 ```
